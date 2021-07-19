@@ -16,7 +16,8 @@ export class RootComponent {
     return (
       <ds-modal 
         open 
-        title="Modal de teste" 
+        title="Modal de teste"
+        onCloseAction={() => console.log("close action clicked")}
         actions={{
           cancel: { text: 'Cancelar', action: () => console.log('cancel action clicked') },
           confirm: { text: 'Confirmar', action: () => console.log('confirm action clicked') },

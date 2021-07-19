@@ -49,6 +49,7 @@ declare namespace LocalJSX {
     }
     interface DsModal {
         "actions"?: any;
+        "onCloseAction"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
         "title"?: string;
     }

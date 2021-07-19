@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'ds-modal',
@@ -9,6 +9,7 @@ export class DsModal {
   @Prop() open: boolean = false;
   @Prop() title: string;
   @Prop() actions: any;
+  @Event() closeAction: EventEmitter
 
   render() {
     return (
