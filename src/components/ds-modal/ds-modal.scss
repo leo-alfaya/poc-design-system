@@ -1,0 +1,31 @@
+.modal {
+  display: none;
+
+  &.open {
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    max-width: 50%;
+    min-height: 100px;
+    background-color: white;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+
+    & > ds-button {
+      margin-left: 16px;
+    }
+  }
+}

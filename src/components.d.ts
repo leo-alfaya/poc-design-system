@@ -9,6 +9,11 @@ export namespace Components {
     interface DsButton {
         "text": string;
     }
+    interface DsModal {
+        "actions": any;
+        "open": boolean;
+        "title": string;
+    }
     interface RootComponent {
     }
 }
@@ -19,6 +24,12 @@ declare global {
         prototype: HTMLDsButtonElement;
         new (): HTMLDsButtonElement;
     };
+    interface HTMLDsModalElement extends Components.DsModal, HTMLStencilElement {
+    }
+    var HTMLDsModalElement: {
+        prototype: HTMLDsModalElement;
+        new (): HTMLDsModalElement;
+    };
     interface HTMLRootComponentElement extends Components.RootComponent, HTMLStencilElement {
     }
     var HTMLRootComponentElement: {
@@ -27,6 +38,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
+        "ds-modal": HTMLDsModalElement;
         "root-component": HTMLRootComponentElement;
     }
 }
@@ -35,10 +47,16 @@ declare namespace LocalJSX {
         "onButtonClick"?: (event: CustomEvent<any>) => void;
         "text"?: string;
     }
+    interface DsModal {
+        "actions"?: any;
+        "open"?: boolean;
+        "title"?: string;
+    }
     interface RootComponent {
     }
     interface IntrinsicElements {
         "ds-button": DsButton;
+        "ds-modal": DsModal;
         "root-component": RootComponent;
     }
 }
@@ -47,6 +65,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            "ds-modal": LocalJSX.DsModal & JSXBase.HTMLAttributes<HTMLDsModalElement>;
             "root-component": LocalJSX.RootComponent & JSXBase.HTMLAttributes<HTMLRootComponentElement>;
         }
     }
