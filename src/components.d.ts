@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface DsButton {
         "text": string;
+        "type": string;
     }
     interface DsModal {
         "actions": any;
@@ -46,6 +47,7 @@ declare namespace LocalJSX {
     interface DsButton {
         "onButtonClick"?: (event: CustomEvent<any>) => void;
         "text"?: string;
+        "type"?: string;
     }
     interface DsModal {
         "actions"?: any;
