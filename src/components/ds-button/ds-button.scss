@@ -1,3 +1,23 @@
 :host {
   display: block;
 }
+
+.btn{
+  border: none;
+  border-radius: 2px;
+  padding: 10px 30px 10px 30px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+
+  &.primary{
+    background-color: #1a37fd !important;
+    color: #fff;
+  }
+  
+  &.secundary{
+    background-color: #fff !important;
+    color: #1a37fd;
+    border: solid 1px #dddddd !important;
+  }
+}

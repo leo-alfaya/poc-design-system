@@ -20,11 +20,11 @@ export class DsModal {
           </div>
           <slot />
           <div class="actions">
-            {this.actions.cancel ? <ds-button text={this.actions.cancel.text} onButtonClick={this.actions.cancel.action} /> : null}
-            {this.actions.confirm ? <ds-button text={this.actions.confirm.text} onButtonClick={this.actions.confirm.action} /> : null}
+            {this.actions.cancel ? <ds-button text={this.actions.cancel.text} onButtonClick={this.actions.cancel.action} type={"secundary"}/> : null}
+            {this.actions.confirm ? <ds-button text={this.actions.confirm.text} onButtonClick={this.actions.confirm.action} type={"primary"}/> : null}
           </div>
         </div>
       </div>
     );
   }
-}
+}""
