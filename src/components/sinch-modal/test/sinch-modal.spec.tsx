@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { DsModal } from '../ds-modal';
+import { SinchModal } from '../sinch-modal';
 
-describe('ds-modal', () => {
+describe('sinch-modal', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [DsModal],
-      html: `<ds-modal></ds-modal>`,
+      components: [SinchModal],
+      html: `<sinch-modal></sinch-modal>`,
     });
     expect(page.root).toEqualHtml(`
-      <ds-modal>
+      <sinch-modal>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </ds-modal>
+      </sinch-modal>
     `);
   });
 });

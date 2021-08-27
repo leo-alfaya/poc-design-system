@@ -1,25 +1,25 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
-import { DsButton } from '../ds-button';
+import { SinchButton } from '../sinch-button';
 
-describe('ds-button', () => {
+describe('sinch-button', () => {
   let page;
   const onClickButton = jest.fn();
   
   beforeEach(async () => {
     page = await newSpecPage({
-      components: [DsButton],
-      template: () => (<ds-button text="Continuar" onButtonClick={onClickButton}></ds-button>)
+      components: [SinchButton],
+      template: () => (<sinch-button text="Continuar" onButtonClick={onClickButton}></sinch-button>)
     });
   })
 
   it('renders', async () => {
     expect(page.root).toEqualHtml(`
-      <ds-button>
+      <sinch-button>
       <mock:shadow-root>
         <button>Continuar</button>
         </mock:shadow-root>
-      </ds-button>
+      </sinch-button>
     `);
   });
 

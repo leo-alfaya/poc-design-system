@@ -6,70 +6,70 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface DsButton {
+    interface RootComponent {
+    }
+    interface SinchButton {
         "text": string;
         "type": string;
     }
-    interface DsModal {
+    interface SinchModal {
         "actions": any;
         "open": boolean;
-        "title": string;
-    }
-    interface RootComponent {
+        "titleText": string;
     }
 }
 declare global {
-    interface HTMLDsButtonElement extends Components.DsButton, HTMLStencilElement {
-    }
-    var HTMLDsButtonElement: {
-        prototype: HTMLDsButtonElement;
-        new (): HTMLDsButtonElement;
-    };
-    interface HTMLDsModalElement extends Components.DsModal, HTMLStencilElement {
-    }
-    var HTMLDsModalElement: {
-        prototype: HTMLDsModalElement;
-        new (): HTMLDsModalElement;
-    };
     interface HTMLRootComponentElement extends Components.RootComponent, HTMLStencilElement {
     }
     var HTMLRootComponentElement: {
         prototype: HTMLRootComponentElement;
         new (): HTMLRootComponentElement;
     };
+    interface HTMLSinchButtonElement extends Components.SinchButton, HTMLStencilElement {
+    }
+    var HTMLSinchButtonElement: {
+        prototype: HTMLSinchButtonElement;
+        new (): HTMLSinchButtonElement;
+    };
+    interface HTMLSinchModalElement extends Components.SinchModal, HTMLStencilElement {
+    }
+    var HTMLSinchModalElement: {
+        prototype: HTMLSinchModalElement;
+        new (): HTMLSinchModalElement;
+    };
     interface HTMLElementTagNameMap {
-        "ds-button": HTMLDsButtonElement;
-        "ds-modal": HTMLDsModalElement;
         "root-component": HTMLRootComponentElement;
+        "sinch-button": HTMLSinchButtonElement;
+        "sinch-modal": HTMLSinchModalElement;
     }
 }
 declare namespace LocalJSX {
-    interface DsButton {
+    interface RootComponent {
+    }
+    interface SinchButton {
         "onButtonClick"?: (event: CustomEvent<any>) => void;
         "text"?: string;
         "type"?: string;
     }
-    interface DsModal {
+    interface SinchModal {
         "actions"?: any;
         "onCloseAction"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
-        "title"?: string;
-    }
-    interface RootComponent {
+        "titleText"?: string;
     }
     interface IntrinsicElements {
-        "ds-button": DsButton;
-        "ds-modal": DsModal;
         "root-component": RootComponent;
+        "sinch-button": SinchButton;
+        "sinch-modal": SinchModal;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ds-button": LocalJSX.DsButton & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
-            "ds-modal": LocalJSX.DsModal & JSXBase.HTMLAttributes<HTMLDsModalElement>;
             "root-component": LocalJSX.RootComponent & JSXBase.HTMLAttributes<HTMLRootComponentElement>;
+            "sinch-button": LocalJSX.SinchButton & JSXBase.HTMLAttributes<HTMLSinchButtonElement>;
+            "sinch-modal": LocalJSX.SinchModal & JSXBase.HTMLAttributes<HTMLSinchModalElement>;
         }
     }
 }

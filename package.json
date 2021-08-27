@@ -1,5 +1,5 @@
 {
-  "name": "poc-design-system",
+  "name": "component-library",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,7 +9,7 @@
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/poc-design-system/poc-design-system.esm.js",
+  "unpkg": "dist/component-library/component-library.esm.js",
   "files": [
     "dist/",
     "loader/"
@@ -26,6 +26,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@stencil/react-output-target": "0.0.9",
     "@stencil/sass": "^1.4.1",
     "@types/jest": "^26.0.24",
     "@types/puppeteer": "^5.4.3",

@@ -1,11 +1,11 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('ds-modal', () => {
+describe('sinch-modal', () => {
   it('renders', async () => {
     const page = await newE2EPage();
-    await page.setContent('<ds-modal></ds-modal>');
+    await page.setContent('<sinch-modal></sinch-modal>');
 
-    const element = await page.find('ds-modal');
+    const element = await page.find('sinch-modal');
     expect(element).toHaveClass('hydrated');
   });
 });

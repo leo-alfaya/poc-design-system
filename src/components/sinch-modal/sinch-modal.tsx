@@ -1,13 +1,13 @@
 import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
 @Component({
-  tag: 'ds-modal',
-  styleUrl: 'ds-modal.scss',
+  tag: 'sinch-modal',
+  styleUrl: 'sinch-modal.scss',
   shadow: true,
 })
-export class DsModal {
+export class SinchModal {
   @Prop() open: boolean = false;
-  @Prop() title: string;
+  @Prop() titleText: string;
   @Prop() actions: any;
   @Event() closeAction: EventEmitter
 
@@ -16,15 +16,15 @@ export class DsModal {
       <div class={`modal ${this.open ? 'open' : ''}`}>
         <div class="container">
           <div class="title">
-            <h1>{this.title}</h1>
+            <h1>{this.titleText}</h1>
           </div>
           <slot />
           <div class="actions">
-            {this.actions.cancel ? <ds-button text={this.actions.cancel.text} onButtonClick={this.actions.cancel.action} type={"secundary"}/> : null}
-            {this.actions.confirm ? <ds-button text={this.actions.confirm.text} onButtonClick={this.actions.confirm.action} type={"primary"}/> : null}
+            {this.actions.cancel ? <sinch-button text={this.actions.cancel.text} onButtonClick={this.actions.cancel.action} type={"secundary"}/> : null}
+            {this.actions.confirm ? <sinch-button text={this.actions.confirm.text} onButtonClick={this.actions.confirm.action} type={"primary"}/> : null}
           </div>
         </div>
       </div>
     );
   }
-}""
+}
